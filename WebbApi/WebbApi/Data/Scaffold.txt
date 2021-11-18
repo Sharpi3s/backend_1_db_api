@@ -1,0 +1,4 @@
+﻿Scaffold-DbContext "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sanne\Documents\Webbsidor\backend1\dbfirst_uppgift1\WebbApi\WebbApi\Data\WebbApi_db.mdf;Integrated Security=True;Connect Timeout=30" Microsoft.EntityFrameworkCore.SqlServer -Context SqlContext -ContextDir Data -OutputDir Entities -force
+
+
+Scaffold-DbContext "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sanne\Documents\Webbsidor\backend1\dbfirst_uppgift1\WebbApi\WebbApi\Data\WebbApi_db.mdf;Integrated Security=True;Connect Timeout=30" Microsoft.EntityFrameworkCore.SqlServer -Context SqlContext -ContextDir Data -OutputDir Entities -DataAnnotation -Force
