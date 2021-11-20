@@ -27,8 +27,6 @@ namespace WebbApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GetOrders>>> GetOrders()
         {
-
-
             var AllOrders = await _context.Orders.Include(x => x.OrderLines).ToListAsync();
 
             var Orders = new List<GetOrders>();
@@ -59,18 +57,11 @@ namespace WebbApi.Controllers
                         UnitPrice = orderline.UnitPrice,
                         Product = _product
                     });
-
-               
                 }
                 Orders.Add(order);
             }
 
-
-
-
-
             return new OkObjectResult(Orders);
-
 
         }
 
@@ -114,10 +105,7 @@ namespace WebbApi.Controllers
 
                 }
 
-
-
             return new OkObjectResult(_order);
-            //return order;
         }
 
         // PUT: api/Orders/5

@@ -16,7 +16,6 @@ namespace WebbApi.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly SqlContext _context;
-
         public ProductsController(SqlContext context)
         {
             _context = context;
@@ -47,9 +46,6 @@ namespace WebbApi.Controllers
         }
 
 
-
-
-
         // GET: api/Products/5
         [HttpGet("{id}")]
         public async Task<ActionResult<GetProducts>> GetProduct(int id)
@@ -74,8 +70,6 @@ namespace WebbApi.Controllers
                 };
                 return newProduct;
             }
-
-
         }
 
         // PUT: api/Products/5

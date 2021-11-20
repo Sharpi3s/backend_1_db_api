@@ -25,9 +25,6 @@ namespace WebbApi.Controllers
             _context = context;
         }
 
-
-
-
         [HttpPost("SignUp")]
         public async Task<ActionResult> SignUp(SignUpModel model)
         {
@@ -64,8 +61,6 @@ namespace WebbApi.Controllers
                         UserAdressesId = userAdress.Id
                     };
 
-
-                    // Här kan det vara problem kan behöva mer saker...
                     _context.Users.Add(user);
                     await _context.SaveChangesAsync();
 
@@ -77,16 +72,6 @@ namespace WebbApi.Controllers
 
                     var r = await SignIn(_user);
                     return CreatedAtAction("SignIn", r);
-
-                    //return Ok();
-
-
-                    //return RedirectToAction("SignIn", user);
-                    //return CreatedAtAction("SignIn", user);
-                    //return CreatedAtAction("~/api/Authentication/SignIn", user);
-
-
-                    //return new OkResult();
 
                 }
                 else
@@ -100,21 +85,6 @@ namespace WebbApi.Controllers
             }
         }
 
-
-
-
-
-
-        // POST: api/Authentication
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<User>> PostUser(User user)
-        //{
-        //    _context.Users.Add(user);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetUser", new { id = user.Id }, user);
-        //}
 
         [HttpPost("SignIn")]
         public async Task<ActionResult> SignIn(SigninModel model)
@@ -140,7 +110,6 @@ namespace WebbApi.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        //public async Task<IActionResult> PutUser(int id, User user)
         public async Task<IActionResult> ChangeUser(int id, UpdateUser model)
         {
             
@@ -193,7 +162,6 @@ namespace WebbApi.Controllers
                 }
             }
 
-
             return NoContent();
         }
         private bool UserExists(int id)
@@ -201,37 +169,6 @@ namespace WebbApi.Controllers
             return _context.Users.Any(e => e.Id == id);
         }
 
-        //[HttpPost("SignUp")]
-        //public async Task<ActionResult> SignUp(CreateUser model)
-        //{
-
-        //    var _user = await _context.Users.Where(x => x.Email == model.Email).FirstOrDefaultAsync();
-
-        //    if (_user == null)
-        //    {
-        //        var user = new User()
-        //        {
-        //            FirstName = model.FirstName,
-        //            LastName = model.LastName,
-        //            Email = model.Email,
-        //            Password = model.Password
-        //        };
-
-
-        //        _context.Users.Add(user);
-        //        await _context.SaveChangesAsync();
-
-        //        return new OkResult();
-        //    }
-
-        //    return new BadRequestObjectResult(JsonConvert.SerializeObject(new { message = "a user with the same email address already exists." }));
-
-        //}
-
-        //private bool UserExists(int id)
-        //{
-        //    return _context.Users.Any(e => e.Id == id);
-        //}
     }
 
 

@@ -108,68 +108,6 @@ namespace WebbApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //[HttpPost]
-        //public async Task<ActionResult<User>> PostUser(User user)
-        //{
-
-        //    if (!string.IsNullOrWhiteSpace(user.FirstName) && !string.IsNullOrWhiteSpace(user.LastName) && !string.IsNullOrWhiteSpace(user.Email))
-        //    {
-
-        //        var exists = _context.UserAdresses.Where(x => x.Adress == user.UserAdresses.Adress).FirstOrDefault();
-                
-        //        var patternEmail = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-        //        //En stor bokstav, En liten bokstav, Ett specialtecken, minst 8 bokstäver långt
-        //        var patternPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
-
-        //        var emailExists = _context.Users.Where(x => x.Email == user.Email).FirstOrDefaultAsync();
-
-
-        //        if (Regex.IsMatch(user.Email, patternEmail) && Regex.IsMatch(user.Password, patternPassword))
-        //        {
-        //            //if (emailExists.Email)
-        //            //{
-
-        //            //}
-
-        //            if (exists == null)
-        //            {
-        //                _context.Users.Add(user);
-        //                await _context.SaveChangesAsync();
-
-        //                return CreatedAtAction("GetUser", new { id = user.Id }, user);
-        //            }
-        //            var newUser = new User
-        //            {
-        //                FirstName = user.FirstName,
-        //                LastName = user.LastName,
-        //                Email = user.Email,
-        //                Password = user.Password,
-        //                Admin = user.Admin,
-        //                UserAdressesId = exists.Id
-        //            };
-
-
-        //            _context.Users.Add(newUser);
-        //            await _context.SaveChangesAsync();
-
-        //            return CreatedAtAction("GetUser", new { id = user.Id }, newUser);
-
-        //        }
-
-        //        else
-        //        {
-        //            return new BadRequestObjectResult(JsonConvert.SerializeObject(new { message = $"Email is wrong format" }));
-        //        }
-
-
-
-        //    }
-
-        //    return new BadRequestObjectResult(JsonConvert.SerializeObject(new { message = $"All fields must contain values." }));
-
-        //}
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]

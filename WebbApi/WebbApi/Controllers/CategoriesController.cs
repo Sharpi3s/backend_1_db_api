@@ -30,8 +30,8 @@ namespace WebbApi.Controllers
         {
             var AllCategories = await _context.Categories.Include(x => x.SubCategories).ThenInclude(x => x.Products).ToListAsync();
             var Categories = new List<CategoryModel>();
+
             var AllProducts = await _context.Products.ToListAsync();
-            //var SubCategories = new List<SubCategoryModel>();
             var Products = new List<SubCategoryProductModel>();
 
             foreach (var category in AllCategories)
@@ -60,7 +60,6 @@ namespace WebbApi.Controllers
                             };
                             Products.Add(_product);
                         }
-
                     }
                     _category.SubCategories.Add(new SubCategoryModel
                     {
@@ -72,17 +71,11 @@ namespace WebbApi.Controllers
 
                 }
 
-
-
                 Categories.Add(_category);
             }
 
-
             return new OkObjectResult(Categories);
 
-
-
-            //return await _context.Categories.ToListAsync();
         }
 
         // GET: api/Categories/5

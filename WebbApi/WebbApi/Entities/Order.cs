@@ -18,7 +18,6 @@ namespace WebbApi.Entities
         public DateTime OrderDate { get; set; }
         public string Status { get; set; }
         public decimal TotalAmount { get; set; }
-
         public virtual UserAdress UserAdresses { get; set; }
         public virtual User Users { get; set; }
         public virtual ICollection<OrderLine> OrderLines { get; set; }

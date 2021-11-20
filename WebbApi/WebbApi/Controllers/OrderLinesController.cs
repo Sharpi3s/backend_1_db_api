@@ -32,14 +32,6 @@ namespace WebbApi.Controllers
         }
 
 
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<OrderLine>>> GetOrderLines()
-        //{
-
-        //    return await _context.OrderLines.ToListAsync();
-        //}
-
-
         // GET: api/OrderLines/5
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderLine>> GetOrderLine(int id)
